@@ -62,14 +62,16 @@ class CartDisplay extends Component {
       loading: false
     });
   }
+
   toggleHover = () => {
     this.setState({ hover: !this.state.hover });
   };
+
   _submitOrder = () => {
     const { cart } = this.props;
     if (cart.length > 0) {
       axios({
-        url: "/orders",
+        url: "https://famous-dialect-217523.appspot.com/orders",
         method: "POST",
         headers: {
           "x-access-token": document.cookie
@@ -121,7 +123,9 @@ class CartDisplay extends Component {
 
   _decreaseQuantity = event => {
     const id = event.target.id;
+    console.log("event.target:", event.target);
     let oldCart = [...this.state.currentCart];
+    console.log("oldCart:", oldCart);
     let oldQuantity = oldCart[id].quantity;
     if (oldQuantity > 1) {
       let newQuantity = oldQuantity - 1;
@@ -136,6 +140,7 @@ class CartDisplay extends Component {
 
   render() {
     const { classes } = this.props;
+    console.log("currentCart:", this.state.currentCart)
 
     let linkStyle;
     if (this.state.hover) {

@@ -43,7 +43,7 @@ class CatalogueDisplay extends Component {
     };
   }
   componentDidMount() {
-    fetch("/products", {
+    fetch("famous-dialect-217523.appspot.com/products", {
       headers: new Headers({
         "x-access-token": document.cookie,
         "Content-Type": "application/x-www-form-urlencoded"

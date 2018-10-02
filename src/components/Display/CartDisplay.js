@@ -69,7 +69,7 @@ class CartDisplay extends Component {
     const { cart } = this.props;
     if (cart.length > 0) {
       axios({
-        url: "/orders",
+        url: "famous-dialect-217523.appspot.com/orders",
         method: "POST",
         headers: {
           "x-access-token": document.cookie

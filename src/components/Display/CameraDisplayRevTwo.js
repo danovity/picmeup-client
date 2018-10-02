@@ -62,7 +62,7 @@ class CameraDisplayRevTwo extends Component {
     const formData = new FormData();
     formData.append("image", imgData);
 
-    axios.post("/annotations", formData, {
+    axios.post("famous-dialect-217523.appspot.com/annotations", formData, {
       onUploadProgress: progressEvent => {
         console.log(progressEvent.loaded / progressEvent.total);
       }

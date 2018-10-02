@@ -1,0 +1,126 @@
+.pop-up {
+  grid-row: 2;
+  align-self: center;
+  background-color: orangered;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  border: 0.5rem solid grey;
+  font-size: 4rem;
+  &__top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  &__middle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  &__bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  &__product-name {
+    font-size: 5rem;
+  }
+
+  &__product-price {
+    font-size: 5rem;
+  }
+
+  &__label {
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+
+  &__signin {
+    display: grid;
+    width: 30rem;
+    position: absolute;
+    top: -2000%;
+    left: -1500%;
+    grid-template-rows: min-content 1fr min-content;
+    background-color: white;
+  }
+}
+
+.popup-content {
+  width: auto;
+  background: none;
+  border: none;
+}
+
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+  transform: scaleX(-1);
+  filter: FlipH;
+}
+
+#camera--trigger {
+  width: 200px;
+  background-color: #aa82f6;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+  }
+}
+
+#camera--submit__photo {
+  background-color: #aa82f6;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+  }
+}
+
+.taken {
+  height: 100px !important;
+  width: 100px !important;
+  transition: all 0.5s ease-in;
+  border: solid 3px white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.react-html5-camera-photo > img,
+.react-html5-camera-photo > video {
+  width: auto !important;
+}

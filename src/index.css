@@ -1,0 +1,212 @@
+.navigation {
+  grid-column: center-start/center-end;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  background-color: #5469e4; }
+  .navigation__home {
+    display: initial; }
+
+.catalogue,
+.camera,
+.shopping-cart {
+  color: white;
+  font-size: 1.6rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0px 0px 1px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 1px #c1c1c1;
+  box-shadow: inset 0px 0px 1px #c1c1c1;
+  transition: all 0.2s;
+  text-transform: uppercase; }
+  .catalogue.active,
+  .camera.active,
+  .shopping-cart.active {
+    background-color: #3f51b5;
+    -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+    box-shadow: inset 0px 0px 10px #c1c1c1; }
+  .catalogue:hover,
+  .camera:hover,
+  .shopping-cart:hover {
+    cursor: pointer;
+    background-color: #3f51b5; }
+
+a {
+  text-decoration: none; }
+
+.display {
+  grid-column: center-start/center-end;
+  grid-row: 1;
+  height: 100%;
+  justify-items: center;
+  overflow: hidden; }
+  .display__home {
+    grid-row: 1 / span 2;
+    padding: 1rem;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center; }
+
+.react-html5-camera-photo {
+  display: grid;
+  grid-template-rows: 1fr min-content min-content;
+  position: relative;
+  text-align: center;
+  height: 82.5%;
+  overflow: hidden; }
+
+#container-circles {
+  bottom: 40%; }
+
+.Typist .Cursor {
+  display: inline-block; }
+  .Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.Cursor {
+  font-size: 4rem; }
+
+.pop-up {
+  grid-row: 2;
+  align-self: center;
+  background-color: orangered;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.5rem solid grey;
+  font-size: 4rem; }
+  .pop-up__top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; }
+  .pop-up__middle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; }
+  .pop-up__bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; }
+  .pop-up__product-name {
+    font-size: 5rem; }
+  .pop-up__product-price {
+    font-size: 5rem; }
+  .pop-up__label {
+    font-size: 4rem;
+    text-transform: uppercase; }
+  .pop-up__signin {
+    display: grid;
+    width: 30rem;
+    position: absolute;
+    top: -2000%;
+    left: -1500%;
+    grid-template-rows: min-content 1fr min-content;
+    background-color: white; }
+
+.popup-content {
+  width: auto;
+  background: none;
+  border: none; }
+
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+  transform: scaleX(-1);
+  filter: FlipH; }
+
+#camera--trigger {
+  width: 200px;
+  background-color: #aa82f6;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transition: all 0.2s; }
+  #camera--trigger:hover {
+    cursor: pointer;
+    background-color: #3f51b5; }
+
+#camera--submit__photo {
+  background-color: #aa82f6;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s; }
+  #camera--submit__photo:hover {
+    cursor: pointer;
+    background-color: #3f51b5; }
+
+.taken {
+  height: 100px !important;
+  width: 100px !important;
+  transition: all 0.5s ease-in;
+  border: solid 3px white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  top: 20px;
+  right: 20px;
+  z-index: 2; }
+
+.react-html5-camera-photo > img,
+.react-html5-camera-photo > video {
+  width: auto !important; }
+
+.button__container {
+  display: flex; }
+
+.button:hover {
+  cursor: pointer; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6; }
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] minmax(32rem, 48rem) [center-end] 1fr [full-end];
+  grid-template-rows: 80vh 15vh; }

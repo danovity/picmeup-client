@@ -1,0 +1,9 @@
+.button {
+  &__container {
+    display: flex;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -43,7 +43,7 @@ class CatalogueDisplay extends Component {
     };
   }
   componentDidMount() {
-    fetch("famous-dialect-217523.appspot.com/products", {
+    fetch("https://famous-dialect-217523.appspot.com/products", {
       headers: new Headers({
         "x-access-token": document.cookie,
         "Content-Type": "application/x-www-form-urlencoded"
@@ -140,7 +140,7 @@ class CatalogueDisplay extends Component {
   setQuery = value => {
     console.log(value);
     if (value.length === 0) {
-      fetch("/products", {
+      fetch("https://famous-dialect-217523.appspot.com/products", {
         headers: new Headers({
           "x-access-token": document.cookie,
           "Content-Type": "application/x-www-form-urlencoded"
@@ -162,7 +162,7 @@ class CatalogueDisplay extends Component {
   searchProduct = () => {
     var productName = this.state.query;
 
-    fetch("/search", {
+    fetch("https://famous-dialect-217523.appspot.com/search", {
       method: "POST",
       headers: {
         "x-access-token": document.cookie,

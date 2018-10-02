@@ -58,7 +58,7 @@ class RegisterDisplay extends Component {
 
     if (this.state.password === this.state.passwordConfirmation) {
       axios
-        .post("famous-dialect-217523.appspot.com/register", {
+        .post("https://famous-dialect-217523.appspot.com/register", {
           firstName: this.state.firstName,
           lastName: this.state.lastName,
           email: this.state.email,

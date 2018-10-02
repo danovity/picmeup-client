@@ -62,7 +62,7 @@ class CameraDisplayRevTwo extends Component {
     const formData = new FormData();
     formData.append("image", imgData);
 
-    axios.post("famous-dialect-217523.appspot.com/annotations", formData, {
+    axios.post("https://famous-dialect-217523.appspot.com/annotations", formData, {
       onUploadProgress: progressEvent => {
         console.log(progressEvent.loaded / progressEvent.total);
       }
@@ -144,7 +144,7 @@ class CameraDisplayRevTwo extends Component {
     const formData = new FormData();
     formData.append("image", file);
     axios
-      .post("/annotations", formData, {
+      .post("https://famous-dialect-217523.appspot.com/annotations", formData, {
         headers: {
           "x-access-token": document.cookie
         }

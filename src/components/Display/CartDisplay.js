@@ -245,7 +245,7 @@ class CartDisplay extends Component {
                         {/* <Button
                           variant="fab"
                           mini
-                          aria-label="Add"
+                          aria-label="Minus"
                           className={classes.button}
                           id={index}
                           onClick={this._decreaseQuantity}
@@ -258,7 +258,7 @@ class CartDisplay extends Component {
                             viewBox="0 0 24 24"
                             id={index}
                           >
-                            <path id={index} fill="white" d="M19 13H5v-2h14v2z"  />
+                            <path id={index} fill="white" d="M19 13H5v-2h14v2z" />
                           </svg>
                         </Button> */}
                         <div className="button__plus" id={index}

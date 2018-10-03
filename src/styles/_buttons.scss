@@ -6,4 +6,30 @@
   &:hover {
     cursor: pointer;
   }
+
+  &__minus {
+    padding: 0.4rem 1rem;
+    background-color: grey;
+    color: white;
+    border-radius: 100%;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: darkgray;
+      cursor: pointer;
+    }
+  }
+
+  &__plus {
+    padding: 0.4rem 1.2rem;
+    background-color: grey;
+    color: white;
+    border-radius: 100%;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: darkgray;
+      cursor: pointer;
+    }
+  }
 }

@@ -9,7 +9,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { cart: [] };
+    this.state = {
+      cart: []
+    };
   }
 
   addToCart = product => {

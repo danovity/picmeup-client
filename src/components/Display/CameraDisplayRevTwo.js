@@ -53,21 +53,21 @@ class CameraDisplayRevTwo extends Component {
     console.log(this.state.selectedFile);
   }
 
-  onSubmitDataUriToServer = () => {
-    console.log("Submit button pressed.");
-    console.log(document.querySelector("#camera--output").src);
+  // onSubmitDataUriToServer = () => {
+  //   console.log("Submit button pressed.");
+  //   console.log(document.querySelector("#camera--output").src);
 
-    let imgData = document.querySelector("#camera--output").src;
+  //   let imgData = this.state.selectedFile //document.querySelector("#camera--output").src;
 
-    const formData = new FormData();
-    formData.append("image", imgData);
+  //   const formData = new FormData();
+  //   formData.append("image", imgData);
 
-    axios.post("https://famous-dialect-217523.appspot.com/annotations", formData, {
-      onUploadProgress: progressEvent => {
-        console.log(progressEvent.loaded / progressEvent.total);
-      }
-    });
-  };
+  //   axios.post("https://famous-dialect-217523.appspot.com/annotations", formData, {
+  //     onUploadProgress: progressEvent => {
+  //       console.log(progressEvent.loaded / progressEvent.total);
+  //     }
+  //   });
+  // };
 
   renderPopup = () => {
     if (this.state.result === "not found") {
@@ -193,28 +193,29 @@ class CameraDisplayRevTwo extends Component {
     );
     return (
       <div className="display">
-        <Camera
-          onTakePhoto={dataUri => {
-            this.onTakePhoto(dataUri);
-          }}
-          onCameraError={error => {
-            this.onCameraError(error);
-          }}
-          idealFacingMode={FACING_MODES.ENVIRONMENT}
-          idealResolution={{ width: 1080, height: 480 }}
-          imageType={IMAGE_TYPES.JPG}
-          imageCompression={0.97}
-          isMaxResolution={false}
-          isImageMirror={false}
-          isDisplayStartCameraError={true}
-          sizeFactor={1}
-          onCameraStart={stream => {
-            this.onCameraStart(stream);
-          }}
-          onCameraStop={() => {
-            this.onCameraStop();
-          }}
-        />
+        <div className="camera-window">
+          <Camera
+            onTakePhoto={dataUri => {
+              this.onTakePhoto(dataUri);
+            }}
+            onCameraError={error => {
+              this.onCameraError(error);
+            }}
+            idealFacingMode={FACING_MODES.ENVIRONMENT}
+            imageType={IMAGE_TYPES.JPG}
+            imageCompression={0.97}
+            isMaxResolution={false}
+            isImageMirror={false}
+            isDisplayStartCameraError={true}
+            sizeFactor={1}
+            onCameraStart={stream => {
+              this.onCameraStart(stream);
+            }}
+            onCameraStop={() => {
+              this.onCameraStop();
+            }}
+          />
+        </div>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <img src="//:0" alt="" id="camera--output" className="taken" />

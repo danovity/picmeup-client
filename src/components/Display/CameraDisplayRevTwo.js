@@ -62,11 +62,15 @@ class CameraDisplayRevTwo extends Component {
     const formData = new FormData();
     formData.append("image", imgData);
 
-    axios.post("https://famous-dialect-217523.appspot.com/annotations", formData, {
-      onUploadProgress: progressEvent => {
-        console.log(progressEvent.loaded / progressEvent.total);
+    axios.post(
+      "https://famous-dialect-217523.appspot.com/annotations",
+      formData,
+      {
+        onUploadProgress: progressEvent => {
+          console.log(progressEvent.loaded / progressEvent.total);
+        }
       }
-    });
+    );
   };
 
   renderPopup = () => {
@@ -150,6 +154,7 @@ class CameraDisplayRevTwo extends Component {
         }
       })
       .then(result => {
+        console.log("result.data", result.data);
         if (result.data.type === "not found") {
           console.log("not found");
           this.setState({ open: true, result: "not found" });

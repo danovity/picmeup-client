@@ -132,8 +132,7 @@ a {
   object-fit: cover; }
 
 #camera--view,
-#camera--sensor,
-#camera--output {
+#camera--sensor {
   transform: scaleX(-1);
   filter: FlipH; }
 

@@ -53,7 +53,7 @@ class CameraDisplayRevTwo extends Component {
     console.log(this.state.selectedFile);
   }
 
-  onSubmitDataUriToServer = () => {
+  /*   onSubmitDataUriToServer = () => {
     console.log("Submit button pressed.");
     console.log(document.querySelector("#camera--output").src);
 
@@ -71,7 +71,7 @@ class CameraDisplayRevTwo extends Component {
         }
       }
     );
-  };
+  }; */
 
   renderPopup = () => {
     if (this.state.result === "not found") {

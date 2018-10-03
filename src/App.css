@@ -26,3 +26,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.button__minus,
+.button__plus{
+    background-color: grey;
+    padding: .5rem 1rem;
+    border-radius: 100%;
+    margin: 0;
+    color:white;
+}
+
+.button__minus:hover,
+.button__plus:hover{
+cursor: pointer;
+}

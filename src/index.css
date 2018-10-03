@@ -210,3 +210,26 @@ body {
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] minmax(32rem, 48rem) [center-end] 1fr [full-end];
   grid-template-rows: 80vh 15vh; }
+
+
+.button__plus{
+    background-color: grey;
+    padding: .5rem 1.2rem;
+    border-radius: 100%;
+    margin: 0;
+    color:white;
+}
+
+ .button__minus{
+    background-color: grey;
+    padding: .5rem 1.2rem;
+    border-radius: 100%;
+    margin: 0;
+    color:white;
+}
+
+.button__minus:hover,
+.button__plus:hover{
+cursor: pointer;
+background-color: darkgrey;
+}

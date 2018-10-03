@@ -15,6 +15,9 @@ import {
   Button
 } from "@material-ui/core";
 
+import Icon from 'react-icons-kit';
+import { ic_add } from 'react-icons-kit/md/ic_add'
+
 import { Add, Delete } from "@material-ui/icons";
 
 const CustomTableCell = withStyles(theme => ({
@@ -108,34 +111,58 @@ class CartDisplay extends Component {
   };
 
   _increaseQuantity = event => {
-    const id = event.target.id;
+    var id;
+    if (event.target.id === undefined) {
+      console.log(event.target.childNode.id);
+      id = event.target.childNode.id;
+    } else {
+      id = event.target.id;
+    }
 
+    console.log(event.target);
+    console.log(id);
     let oldCart = [...this.state.currentCart];
-    let oldQuantity = oldCart[id].quantity;
 
-    let newQuantity = oldQuantity + 1;
-    oldCart[id].quantity = newQuantity;
-    let updatedCart = oldCart;
-    this.setState({
-      currentCart: updatedCart
-    });
-  };
+      console.log("event.target:", event.target);
 
-  _decreaseQuantity = event => {
-    const id = event.target.id;
-    console.log("event.target:", event.target);
-    let oldCart = [...this.state.currentCart];
-    console.log("oldCart:", oldCart);
-    let oldQuantity = oldCart[id].quantity;
-    if (oldQuantity > 1) {
-      let newQuantity = oldQuantity - 1;
+
+      let oldQuantity = oldCart[id].quantity;
+
+      let newQuantity = oldQuantity + 1;
       oldCart[id].quantity = newQuantity;
       let updatedCart = oldCart;
-
       this.setState({
         currentCart: updatedCart
       });
+
+
+  };
+
+  _decreaseQuantity = event => {
+    var id;
+    if (event.target.id === undefined) {
+      console.log(event.target.childNode.id);
+      id = event.target.childNode.id;
+    } else {
+      id = event.target.id;
     }
+    console.log(event.target);
+    console.log(id);
+    let oldCart = [...this.state.currentCart];
+
+
+      let oldQuantity = oldCart[id].quantity;
+      if (oldQuantity > 1) {
+        let newQuantity = oldQuantity - 1;
+        oldCart[id].quantity = newQuantity;
+        let updatedCart = oldCart;
+
+        this.setState({
+          currentCart: updatedCart
+        });
+      }
+
+
   };
 
   render() {
@@ -199,34 +226,43 @@ class CartDisplay extends Component {
                           paddingTop: "1rem"
                         }}
                       >
-                        <Button
+                        {/* <Button
                           variant="fab"
                           mini
                           aria-label="Minus"
                           className={classes.button}
                           id={index}
                           onClick={this._increaseQuantity}
+                          style={{ zIndex: '999' }}
                         >
-                          <Add style={{ color: "white" }} />
-                        </Button>
+                          <svg id={index} style={{width:'24px',height:'24px'}} viewBox="0 0 24 24">
+                            <path fill="#fff" id={index} d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                          </svg>
+                        </Button> */}
+                        <div className="button__minus" id={index}
+                          onClick={this._increaseQuantity}>+</div>
                         {cartItem.quantity}
-                        <Button
+                        {/* <Button
                           variant="fab"
                           mini
                           aria-label="Add"
                           className={classes.button}
                           id={index}
                           onClick={this._decreaseQuantity}
-                        >
+                          style={{ zIndex: '999'}}
+                      >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
+                            id={index}
                           >
-                            <path fill="white" d="M19 13H5v-2h14v2z" />
+                            <path id={index} fill="white" d="M19 13H5v-2h14v2z"  />
                           </svg>
-                        </Button>
+                        </Button> */}
+                        <div className="button__plus" id={index}
+                          onClick={this._decreaseQuantity}>-</div>
                       </CustomTableCell>
                       <CustomTableCell numeric>
                         $

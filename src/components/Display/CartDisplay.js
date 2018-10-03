@@ -71,7 +71,7 @@ class CartDisplay extends Component {
   };
 
   _submitOrder = () => {
-    const { cart } = this.props;
+    const { cart, updateCart } = this.props;
     if (cart.length > 0) {
       axios({
         url: "https://famous-dialect-217523.appspot.com/orders",
@@ -85,7 +85,7 @@ class CartDisplay extends Component {
         }
       })
         .then(function(response) {
-          console.log(response);
+          updateCart([]);
         })
         .catch(function(error) {
           console.log(error);
@@ -209,7 +209,7 @@ class CartDisplay extends Component {
               <TableBody>
                 {this.state.currentCart.map((cartItem, index) => {
                   return (
-                    <TableRow className={classes.row}>
+                    <TableRow className={classes.row} key={index}>
                       <CustomTableCell component="th" scope="row">
                         {cartItem.product.product_name}
                       </CustomTableCell>
@@ -226,41 +226,9 @@ class CartDisplay extends Component {
                           paddingTop: "1rem"
                         }}
                       >
-                        {/* <Button
-                          variant="fab"
-                          mini
-                          aria-label="Minus"
-                          className={classes.button}
-                          id={index}
-                          onClick={this._increaseQuantity}
-                          style={{ zIndex: '999' }}
-                        >
-                          <svg id={index} style={{width:'24px',height:'24px'}} viewBox="0 0 24 24">
-                            <path fill="#fff" id={index} d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                          </svg>
-                        </Button> */}
                         <div className="button__minus" id={index}
                           onClick={this._increaseQuantity}>+</div>
                         {cartItem.quantity}
-                        {/* <Button
-                          variant="fab"
-                          mini
-                          aria-label="Minus"
-                          className={classes.button}
-                          id={index}
-                          onClick={this._decreaseQuantity}
-                          style={{ zIndex: '999'}}
-                      >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            id={index}
-                          >
-                            <path id={index} fill="white" d="M19 13H5v-2h14v2z" />
-                          </svg>
-                        </Button> */}
                         <div className="button__plus" id={index}
                           onClick={this._decreaseQuantity}>-</div>
                       </CustomTableCell>
